@@ -61,4 +61,44 @@ function finalScore(omr) {
     return Math.round(score);
 }
 
+// problem solved no:04
+function gonoVote(array) {
 
+    if (!Array.isArray(array)) {
+        return "Invalid";
+    }
+
+    let haCount = 0;
+    let naCount = 0;
+
+    for (let vote of array) {
+        if (vote === "ha") haCount++;
+        else if (vote === "na") naCount++;
+    }
+
+    if (haCount > naCount) return true;
+    else if (haCount === naCount) return "equal";
+    else return false;
+}
+
+// problem solved no:05
+function analyzeText(str) {
+
+    if (typeof str !== "string" || str.trim() === "") {
+        return "Invalid";
+    }
+
+    let words = str.split(" ");
+    let longWord = words[0];
+
+    for (let word of words) {
+        if (word.length > longWord.length) {
+            longWord = word;
+        }
+    }
+
+
+    let token = str.split(" ").join("").length;
+
+    return { longwords: longWord, token: token };
+}

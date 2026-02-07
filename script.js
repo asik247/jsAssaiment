@@ -3,7 +3,9 @@
 function newPrice(currentPrice , discount ) {
           // You have to write your code here
           let discoutnResutl = (currentPrice*discount)/100;
-          return discoutnResutl
+        //   return discoutnResutl
+         let newTaka = currentPrice - discoutnResutl
+         return newTaka
 }
 // console.log();
 let value = newPrice(2500,20);
